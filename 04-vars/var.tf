@@ -5,3 +5,6 @@ variable "sample" {
 output "sample" {
   value = var.sample
 }
+
+output "sample1" {
+}
