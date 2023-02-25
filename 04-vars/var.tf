@@ -6,5 +6,5 @@ output "sample" {
   value = var.sample
 }
 
-output "sample1" {
+variable "sample1" {
 }
