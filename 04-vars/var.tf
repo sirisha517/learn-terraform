@@ -7,4 +7,5 @@ output "sample" {
 }
 
 variable "sample1" {
+  value = var.sample1
 }
