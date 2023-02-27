@@ -7,7 +7,7 @@ data "aws_ami" "ami" {
 resource "aws_instance" "frontend" {
  for_each = var.instance
   ami = data.aws_ami.ami.image_id
-  instance_type = "t3.micro"
+  instance_type = each.value["type"]
   vpc_security_group_ids = ["sg-0cd76acf87f0514bd"]
   tags = {
     name = var.instance[count.index]
