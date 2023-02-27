@@ -4,8 +4,8 @@ data "aws_ami" "ami" {
   owners           = ["973714476881"] //OWNER
 }
 
-resource "aws_instance" "frontend" {
- for_each = var.instance
+resource "aws_instance" "instances" {
+ for_each = var.instances
   ami = data.aws_ami.ami.image_id
   instance_type = each.value["type"]
   vpc_security_group_ids = ["sg-0cd76acf87f0514bd"]
@@ -14,7 +14,7 @@ resource "aws_instance" "frontend" {
   }
 }
 
-variable "instance" {
+variable "instances" {
   default = {
     catalogue = {
       name = "catalogue"
@@ -27,19 +27,24 @@ variable "instance" {
   }
 }
 
-variable "names" {
-  default = ["catalogue", "user"]
+output "ec2" {
+  //value = aws_instance.instances["catalogue"].public_ip
+  value = [ for k, v in aws_instance.instances : v.public_ip ]// k is key ,v is value
 }
-
-variable "type" {
-  default = ["t3.micro", "t3.small"]
-}
-resource "aws_instance" "instances" {
-  count = length(var.names)
-  ami = data.aws_ami.ami.image_id
-  instance_type = var.type
-  vpc_security_group_ids = ["sg-0cd76acf87f0514bd"]
-  tags = {
-    Name = var.names[count.index]
-  }
-}
+## IMMATURE CODE
+#variable "names" {
+#  default = ["catalogue", "user"]
+#}
+#
+#variable "type" {
+#  default = ["t3.micro", "t3.small"]
+#}
+#resource "aws_instance" "instances" {
+#  count = length(var.names)
+#  ami = data.aws_ami.ami.image_id
+#  instance_type = var.type
+#  vpc_security_group_ids = ["sg-0cd76acf87f0514bd"]
+#  tags = {
+#    Name = var.names[count.index]
+#  }
+#}
