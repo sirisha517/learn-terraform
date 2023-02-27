@@ -10,7 +10,7 @@ resource "aws_instance" "frontend" {
   instance_type = each.value["type"]
   vpc_security_group_ids = ["sg-0cd76acf87f0514bd"]
   tags = {
-    name = var.instance[count.index]
+    Name = each.value["name"]
   }
 }
 
