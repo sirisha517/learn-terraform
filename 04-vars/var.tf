@@ -36,11 +36,11 @@
 variable "d1" {
   default = [
     {
-      corse_name = "aws"
+      course_name = "aws"
       trainer_name = "raju"
     },
     {
-      corse_name = "devops"
+      course_name = "devops"
       trainer_name = "ravi"
     },
   ]
