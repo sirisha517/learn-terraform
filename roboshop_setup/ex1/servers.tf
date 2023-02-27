@@ -141,7 +141,7 @@ resource "aws_instance" "Payment" {
     Name = "Payment"
   }
 }
-resource "aws_route53_record" "MongoDb" {
+resource "aws_route53_record" "Payment" {
   zone_id = "Z0640963AEF75NOLDKGO"
   name    = "Payment-dev.devops517test.online"
   type    = "A"
