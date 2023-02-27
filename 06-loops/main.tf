@@ -30,3 +30,4 @@ variable "d3" {
 resource "null_resource" "d3" {
   for_each = var.d3
 }
+
