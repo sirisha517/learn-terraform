@@ -26,3 +26,20 @@ variable "instance" {
     }
   }
 }
+
+variable "names" {
+  default = ["catalogue", "user"]
+}
+
+variable "type" {
+  default = ["t3.micro", "t3.small"]
+}
+resource "aws_instance" "instances" {
+  count = length(var.names)
+  ami = data.aws_ami.ami.image_id
+  instance_type = var.type
+  vpc_security_group_ids = ["sg-0cd76acf87f0514bd"]
+  tags = {
+    Name = var.names[count.index]
+  }
+}
