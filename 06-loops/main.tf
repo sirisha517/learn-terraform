@@ -7,7 +7,7 @@ resource "null_resource" "null" {
 }
 
 variable "d2" {
-  default = [apple,banana]
+  default = [apple, banana]
 }
 
 resource "null_resource" "d2" {
@@ -27,6 +27,6 @@ variable "d3" {
   }
 }
 
-resource "null_resource" "d2" {
+resource "null_resource" "d3" {
   for_each = var.d3
 }
