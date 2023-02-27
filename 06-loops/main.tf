@@ -31,3 +31,6 @@ resource "null_resource" "d3" {
   for_each = var.d3
 }
 
+output "FRUIT" {
+  value = [ for i in var.d2 : upper(i)]
+}
