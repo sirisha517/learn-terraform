@@ -20,7 +20,7 @@ resource "aws_route53_record" "frontend" {
   records = [aws_instance.frontend.private_ip]
 }
 resource "aws_instance" "MongoDb" {
-  ami = "ami-0a017d8ceb274537d"
+  ami = "ami-0b5a2b5b8f2be4ec2"
   instance_type = "t3.micro"
   vpc_security_group_ids = ["sg-0cd76acf87f0514bd"]
   tags = {
@@ -35,7 +35,7 @@ resource "aws_route53_record" "MongoDb" {
   records = [aws_instance.MongoDb.private_ip]
 }
 resource "aws_instance" "catalogue" {
-  ami = "ami-0a017d8ceb274537d"
+  ami = "ami-0b5a2b5b8f2be4ec2"
   instance_type = "t3.micro"
   vpc_security_group_ids = ["sg-0cd76acf87f0514bd"]
   tags = {
@@ -50,7 +50,7 @@ resource "aws_route53_record" "catalogue" {
   records = [aws_instance.catalogue.private_ip]
 }
 resource "aws_instance" "Redis" {
-  ami                    = "ami-0a017d8ceb274537d"
+  ami                    = "ami-0b5a2b5b8f2be4ec2"
   instance_type          = "t3.micro"
   vpc_security_group_ids = ["sg-0cd76acf87f0514bd"]
   tags                   = {
@@ -65,7 +65,7 @@ resource "aws_route53_record" "Redis" {
   records = [aws_instance.Redis.private_ip]
 }
 resource "aws_instance" "User" {
-  ami                    = "ami-0a017d8ceb274537d"
+  ami                    = "ami-0b5a2b5b8f2be4ec2"
   instance_type          = "t3.micro"
   vpc_security_group_ids = ["sg-0cd76acf87f0514bd"]
   tags                   = {
@@ -80,7 +80,7 @@ resource "aws_route53_record" "User" {
   records = [aws_instance.User.private_ip]
 }
 resource "aws_instance" "Cart" {
-  ami                    = "ami-0a017d8ceb274537d"
+  ami                    = "ami-0b5a2b5b8f2be4ec2"
   instance_type          = "t3.micro"
   vpc_security_group_ids = ["sg-0cd76acf87f0514bd"]
   tags                   = {
@@ -95,7 +95,7 @@ resource "aws_route53_record" "Cart" {
   records = [aws_instance.Cart.private_ip]
 }
 resource "aws_instance" "MySql" {
-  ami                    = "ami-0a017d8ceb274537d"
+  ami                    = "ami-0b5a2b5b8f2be4ec2"
   instance_type          = "t3.micro"
   vpc_security_group_ids = ["sg-0cd76acf87f0514bd"]
   tags                   = {
@@ -110,7 +110,7 @@ resource "aws_route53_record" "MySql" {
   records = [aws_instance.MySql.private_ip]
 }
 resource "aws_instance" "Shipping" {
-  ami                    = "ami-0a017d8ceb274537d"
+  ami                    = "ami-0b5a2b5b8f2be4ec2"
   instance_type          = "t3.micro"
   vpc_security_group_ids = ["sg-0cd76acf87f0514bd"]
   tags                   = {
@@ -125,7 +125,7 @@ resource "aws_route53_record" "Shipping" {
   records = [aws_instance.Shipping.private_ip]
 }
 resource "aws_instance" "RabbitMq" {
-  ami                    = "ami-0a017d8ceb274537d"
+  ami                    = "ami-0b5a2b5b8f2be4ec2"
   instance_type          = "t3.micro"
   vpc_security_group_ids = ["sg-0cd76acf87f0514bd"]
   tags                   = {
@@ -140,7 +140,7 @@ resource "aws_route53_record" "RabbitMq" {
   records = [aws_instance.RabbitMq.private_ip]
 }
 resource "aws_instance" "Payment" {
-  ami                    = "ami-0a017d8ceb274537d"
+  ami                    = "ami-0b5a2b5b8f2be4ec2"
   instance_type          = "t3.micro"
   vpc_security_group_ids = ["sg-0cd76acf87f0514bd"]
   tags                   = {
